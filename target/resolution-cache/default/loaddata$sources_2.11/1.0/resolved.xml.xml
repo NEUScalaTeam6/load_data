@@ -4,7 +4,7 @@
 		module="loaddata$sources_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20170424010220"
+		publication="20170425191746"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -168,9 +168,6 @@
 		<dependency org="org.scalatest" name="scalatest_2.11" rev="2.2.6" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="scalatest_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
-		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.0.2" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="scala-xml_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
 		<dependency org="org.spark-project.spark" name="unused" rev="1.0.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="unused" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
@@ -254,24 +251,6 @@
 		</dependency>
 		<dependency org="org.json4s" name="json4s-jackson_2.11" rev="3.2.11" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="json4s-jackson_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
-		<dependency org="org.json4s" name="json4s-core_2.11" rev="3.2.11" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="json4s-core_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
-		<dependency org="org.json4s" name="json4s-ast_2.11" rev="3.2.11" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="json4s-ast_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
-		<dependency org="com.thoughtworks.paranamer" name="paranamer" rev="2.6" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="paranamer" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
-		<dependency org="org.scala-lang" name="scalap" rev="2.11.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="scalap" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
-		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="scala-compiler" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
-		<dependency org="org.scala-lang.modules" name="scala-parser-combinators_2.11" rev="1.0.1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="scala-parser-combinators_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="org.glassfish.jersey.core" name="jersey-client" rev="2.22.2" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="jersey-client" type="src" ext="jar" conf="sources" e:classifier="sources"/>
@@ -449,6 +428,30 @@
 		</dependency>
 		<dependency org="org.jpmml" name="pmml-schema" rev="1.2.15" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="pmml-schema" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="co.theasi" name="plotly_2.11" rev="0.2.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="plotly_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="org.scalaj" name="scalaj-http_2.11" rev="2.2.1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="scalaj-http_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-native_2.11" rev="3.3.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="json4s-native_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-core_2.11" rev="3.3.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="json4s-core_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-ast_2.11" rev="3.3.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="json4s-ast_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-scalap_2.11" rev="3.3.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="json4s-scalap_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="com.thoughtworks.paranamer" name="paranamer" rev="2.8" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="paranamer" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.0.5" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="scala-xml_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.8" transitive="false" conf="scala-tool->default(compile)">
 			<artifact name="scala-compiler" type="src" ext="jar" conf="sources" e:classifier="sources"/>

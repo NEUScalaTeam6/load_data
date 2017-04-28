@@ -1,4 +1,4 @@
-[info] Updating {file:/Users/liushengchen/loadData/project/}loaddata-build...
+[info] Updating {file:/Users/liushengchen/course/Scala/final_project/loadData/project/}loaddata-build...
 [debug] :: resolving dependencies :: default#loaddata-build;0.1-SNAPSHOT
 [debug] 	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool]
 [debug] 	validate = true
@@ -16,7 +16,7 @@
 [debug] == resolving dependencies for default#loaddata-build;0.1-SNAPSHOT [provided]
 [debug] == resolving dependencies default#loaddata-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.10.4 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@31e65231
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7b018434
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.4
 [debug] 	found org.scala-lang#scala-library;2.10.4 in sbt-chain
 [debug] 	[2.10.4] org.scala-lang#scala-library;2.10.4
@@ -1766,19 +1766,19 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 1445ms :: artifacts dl 62ms
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT compile produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-compile.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT runtime produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-runtime.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT test produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-test.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT provided produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-provided.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT optional produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-optional.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT compile-internal produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-compile-internal.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT runtime-internal produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-runtime-internal.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT test-internal produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-test-internal.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT plugin produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-plugin.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT sources produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-sources.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT docs produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-docs.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT pom produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-pom.xml
-[debug] 	report for default#loaddata-build;0.1-SNAPSHOT scala-tool produced in /Users/liushengchen/loadData/project/target/resolution-cache/reports/default-loaddata-build-scala-tool.xml
-[debug] 	resolve done (1445ms resolve - 62ms download)
+[debug] :: resolution report :: resolve 1743ms :: artifacts dl 63ms
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT compile produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-compile.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT runtime produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-runtime.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT test produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-test.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT provided produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-provided.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT optional produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-optional.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT compile-internal produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-compile-internal.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT runtime-internal produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-runtime-internal.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT test-internal produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-test-internal.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT plugin produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-plugin.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT sources produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-sources.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT docs produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-docs.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT pom produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-pom.xml
+[debug] 	report for default#loaddata-build;0.1-SNAPSHOT scala-tool produced in /Users/liushengchen/course/Scala/final_project/loadData/project/target/resolution-cache/reports/default-loaddata-build-scala-tool.xml
+[debug] 	resolve done (1743ms resolve - 63ms download)
 [info] Done updating.

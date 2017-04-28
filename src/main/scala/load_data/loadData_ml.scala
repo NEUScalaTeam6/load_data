@@ -1,24 +1,22 @@
 package load_data
 
 import org.apache.spark.sql.SparkSession
-
 import org.apache.spark.sql.functions._
 import org.apache.commons.io.IOUtils
 import java.net.URL
 import java.nio.charset.Charset
+
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.ml.clustering.KMeans
 import org.apache.spark.ml.linalg.Vectors
 import org.apache.spark.ml.linalg.DenseVector
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.DataFrame
-
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.Row
-import org.apache.spark.ml.Pipeline
+import org.apache.spark.ml.{Pipeline, PipelineModel}
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
-import org.apache.spark.ml.feature.{IndexToString, StringIndexer, VectorIndexer,VectorAssembler,StringIndexerModel,
-OneHotEncoder,MaxAbsScaler}
+import org.apache.spark.ml.feature.{IndexToString, MaxAbsScaler, OneHotEncoder, StringIndexer, StringIndexerModel, VectorAssembler, VectorIndexer}
 import org.apache.spark.ml.regression.{RandomForestRegressionModel, RandomForestRegressor}
 import org.apache.spark.ml.evaluation.RegressionEvaluator
 
@@ -28,7 +26,7 @@ import org.apache.spark.ml.evaluation.RegressionEvaluator
   */
 object loadData_ml {
 
-  def main(args: Array[String]) {
+ def  main(args: Array[String]) {
 
     // Create a SparkSession.
     val spark = SparkSession
@@ -40,6 +38,7 @@ object loadData_ml {
 
 
     import spark.implicits._
+
 
     val file = "/Users/liushengchen/Google_Drive/Scala_group/Project/Data/CurryFinalData.csv"
     val shotData = spark.read
@@ -261,7 +260,7 @@ object loadData_ml {
 
     val assembler_1 = new VectorAssembler()
       // .setInputCols(Array("x_center","y_center","period_onehot","h","v","action_type_onehot","d_distance_onehot","score_margin_category"))
-      .setInputCols(Array("x_center","y_center","d_distance_onehot","score_margin_category"))
+      .setInputCols(Array("x_center","y_center","d_distance_onehot","score_margin_category","period_onehot"))
       .setOutputCol("features")
 
     val output_1 = assembler_1.transform(df_1)
@@ -301,6 +300,8 @@ object loadData_ml {
 
     // concatenate "df_missall" to "df_FG"
     val dfUnion =  df_FG.union(df_missall).toDF("features", "shot_made_flag","shots","total","FG%")
+
+
 
     /*
     9. MaxAbsScaler
@@ -343,11 +344,12 @@ object loadData_ml {
     val rf = new RandomForestRegressor()
       .setLabelCol("FG%")
       .setFeaturesCol("indexedFeatures")
+      .setNumTrees(20)
 
 
     // Chain indexer and forest in a Pipeline.
     val pipeline = new Pipeline()
-      .setStages(Array(featureIndexer, rf))
+      .setStages(Array(featureIndexer,rf))
 
     // Train model. This also runs the indexer.
     val model_RF = pipeline.fit(trainingData)
@@ -367,7 +369,44 @@ object loadData_ml {
 
     val rfModel = model_RF.stages(1).asInstanceOf[RandomForestRegressionModel]
 
+
     // save model
-    rfModel.write.overwrite().save("/Users/liushengchen/course/Scala/rfModel")
+    rfModel.write.overwrite().save("rfModel")
+    model_RF.write.overwrite().save("rfPipeline")
+    //model_RF.write.overwrite().save("/Users/liushengchen/course/Scala/final_project/loadData/ml_model/workflow")
+
+    val sameModel =RandomForestRegressionModel.load("rfModel")
+    val samePipeline =PipelineModel.load("rfPipeline")
+
+
+
+    //"x_center","y_center","d_distance_onehot","score_margin_category","period_onehot"
+    val x = 0.5
+    val y = 0.6
+    val d_distance = 0
+    val score_margin = 2
+    val period = 1
+
+    // Convert 1-based indices to 0-based.
+    val d_distance_onehot = Vectors.sparse(7, Array(d_distance), Array(1))
+    val period_onehot = Vectors.sparse(6, Array(period - 1), Array(1))
+
+    val df_prediction = spark.createDataFrame(Seq(
+      (x, y, d_distance_onehot, score_margin, period_onehot)
+    )).toDF("x", "y", "d_distance_onehot", "score_margin", "period_onehot")
+
+    //df_prediction.show
+
+    val assembler_load = new VectorAssembler()
+      // .setInputCols(Array("x_center","y_center","period_onehot","h","v","action_type_onehot","d_distance_onehot","score_margin_category"))
+      .setInputCols(Array("x", "y", "d_distance_onehot", "score_margin", "period_onehot"))
+      .setOutputCol("indexedFeatures")
+
+    val output_p = assembler_load.transform(df_prediction)
+
+    val predictions_test = sameModel.transform(output_p)
+    predictions_test.show()
+
+
   }
 }
